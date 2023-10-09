@@ -12,12 +12,27 @@ export class AppComponent {
 
   fakeData: string = 'Brasilia';
 
-
   constructor(private wheatherService: WheatherService) {
 
-    this.wheatherService.getWeatherData(this.fakeData)
+  }
 
+
+  ngOnInit() {
+
+    this.getWeatherData(this.fakeData)
 
   }
+
+
+
+  getWeatherData(city: string): void {
+
+    this.wheatherService.getWeather(city)
+      .subscribe((response) => {
+        console.log(response);
+      }, (error) => {
+        console.error(error);
+      });
+    };
 
 }

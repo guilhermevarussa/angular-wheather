@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,26 +7,19 @@ import { Observable } from 'rxjs';
 })
 export class WheatherService {
 
-  APIkEY = '9f2c82ad3ca711c185c0c9930579e05d';
-  baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${'Sydinei'}&units=metric&appid=${this.APIkEY}&lang=en`;
-
-  wheatherData!: any;
+  private apiKey = 'c18e1512aamshf31f7516332d281p18f3f5jsnb849c0dba9e2';
+  private apiUrl = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather';
 
   constructor(private http: HttpClient) { }
 
+  getWeather(city: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'X-RapidAPI-Key': this.apiKey,
+      'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+    });
 
-
-  getWeatherData(city: string): Observable<any> {
-
-    const newUrl = `https://api.openweathermap.org/data/2.5/weather?q=${'London'}&units=metric&appid=${this.APIkEY}&lang=en}`;
-
-    this.wheatherData = this.http.get<any>(newUrl);
-
-    console.log('data',this.wheatherData);
-
-    return this.wheatherData;
-
-  };
-
-
+    return this.http.get(`${this.apiUrl}?city=${city}`, { headers });
+  }
 }
+
+
