@@ -20,6 +20,8 @@ export class WheatherService {
 
     return this.http.get(`${this.apiUrl}?city=${city}`, { headers });
   }
+
+
 }
 
 

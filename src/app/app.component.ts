@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { WheatherService } from './services/wheather.service';
+import { NewWheatherService } from './services/new-wheather.service';
+import { IWheather } from './models/wheadther';
 
 @Component({
   selector: 'app-root',
@@ -7,32 +9,6 @@ import { WheatherService } from './services/wheather.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-weather';
-
-
-  fakeData: string = 'Brasilia';
-
-  constructor(private wheatherService: WheatherService) {
-
-  }
-
-
-  ngOnInit() {
-
-    this.getWeatherData(this.fakeData)
-
-  }
-
-
-
-  getWeatherData(city: string): void {
-
-    this.wheatherService.getWeather(city)
-      .subscribe((response) => {
-        console.log(response);
-      }, (error) => {
-        console.error(error);
-      });
-    };
+ 
 
 }
