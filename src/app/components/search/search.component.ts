@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IWheather } from 'src/app/models/wheadther';
 import { NewWheatherService } from 'src/app/services/new-wheather.service';
+import { ObserverService } from 'src/app/services/observer.service';
 
 @Component({
   selector: 'app-search',
@@ -14,42 +15,26 @@ export class SearchComponent {
     city: ['', Validators.required]
   })
 
-  weatherData!: IWheather | any
+  weatherData!: IWheather | any;
 
   constructor(
-    private weatherService: NewWheatherService,
+    private observerService: ObserverService,
     private formbuilder: FormBuilder
   ) { }
 
 
   submitWheatherCity() {
     console.log(this.weatherForm.value);
+    const city = String(this.weatherForm.value.city);
 
-    const city = String(this.weatherForm.value.city)
-
-    this.getWeather(city)
-
-  }
-
-  getWeather(city: string) {
-    this.weatherService.getWheatherData(city).subscribe({
-      next: (response) => {
-        this.weatherData = {
-          base: response.base,
-          clouds: response.clouds.all,
-          coordLa: response.coord.lat,
-          coordLo: response.coord.long,
-          mainTemp: response.main.temp,
-          name: response.name,
-        }
-      }
-    })
-
+    this.sendCityName(city);
   }
 
 
-
-
-
+  sendCityName(city: string) {
+    this.observerService.updateData(city);
+  }
 
 }
+
+
