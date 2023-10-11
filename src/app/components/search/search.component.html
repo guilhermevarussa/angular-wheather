@@ -1,1 +1,8 @@
-<p>search works!</p>
+<form [formGroup]="weatherForm">
+  <label>cidade</label>
+  <input type="text" formControlName="city" />
+
+  <div>
+    <button (click)="submitWheatherCity()">enviar</button>
+  </div>
+</form>

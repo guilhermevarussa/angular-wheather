@@ -8,15 +8,24 @@ export interface IWheather {
         long: number;
     };
 
-    main:{
-        feels_like:number;
-        humity:number;
-        pressure:number;
-        temp:number;
-        temp_max:number;
-        temp_min:number;
+    main: {
+        feels_like: number;
+        humity: number;
+        pressure: number;
+        temp: number;
+        temp_max: number;
+        temp_min: number;
     };
 
-    name:string
+    weather: [
+        {
+            id: number,
+            main: string
+            description: string,
+            icon: string
+        }
+    ];
+
+    name: string
 
 }
