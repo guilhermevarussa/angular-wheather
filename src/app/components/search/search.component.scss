@@ -1,0 +1,36 @@
+.container{
+    margin: 2%;
+}
+
+.card{
+    max-width: 50%;
+    margin:auto;
+}
+
+
+.card-form{
+
+    align-items: center;
+}
+
+
+.card-form mat-form-field{
+    min-width: 80%;
+    margin-right: 2%;
+}
+
+
+.card-form button{
+    height: 40px;
+    width: 90px;
+    background-color: rgb(255, 177, 146);
+    color: #f3f3f3;
+    font-weight: bold;
+
+    &:hover{
+
+    background-color: rgb(238, 89, 30);
+
+    }
+
+}

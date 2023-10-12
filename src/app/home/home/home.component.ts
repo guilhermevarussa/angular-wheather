@@ -12,8 +12,6 @@ export class HomeComponent {
   title = 'angular-weather';
 
 
-  fakeData: string = 'Sorriso';
-
   weatherData!: IWheather | any
 
   constructor(
@@ -31,26 +29,26 @@ export class HomeComponent {
 
 
   getCityName() {
-    this.observerService.getData().subscribe((cityData) => {
-      console.log(cityData);
-    })
+    this.observerService.getData().subscribe(async (cityData) => {
+      console.log(cityData)
 
+      const newCity = String(cityData)
+
+      this.getWeather(newCity)
+
+    })
   }
 
-
-
   getWeather(city: string) {
-    this.weatherService.getWheatherData(city).subscribe({
-      next: (response) => {
-        this.weatherData = {
-          base: response.base,
-          clouds: response.clouds.all,
-          coordLa: response.coord.lat,
-          coordLo: response.coord.long,
-          mainTemp: response.main.temp,
-          name: response.name,
-        }
-      }
+    this.weatherService.getWheatherData(city).subscribe((response) => {
+
+      const weatherResponse = response
+
+      console.log(weatherResponse)
+
+      return this.weatherData = weatherResponse
+
+
     })
 
 
