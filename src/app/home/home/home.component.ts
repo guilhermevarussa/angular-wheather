@@ -30,7 +30,6 @@ export class HomeComponent {
 
   getCityName() {
     this.observerService.getData().subscribe(async (cityData) => {
-      console.log(cityData)
 
       const newCity = String(cityData)
 
@@ -40,7 +39,7 @@ export class HomeComponent {
   }
 
   getWeather(city: string) {
-    this.weatherService.getWheatherData(city).subscribe((response) => {
+    this.weatherService.getWheatherData(city).subscribe((response:IWheather) => {
 
       const weatherResponse = response
 
