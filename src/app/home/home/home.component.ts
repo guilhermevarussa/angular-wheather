@@ -22,7 +22,6 @@ export class HomeComponent {
 
 
   ngOnInit() {
-
     this.getCityName()
 
   }
@@ -39,7 +38,7 @@ export class HomeComponent {
   }
 
   getWeather(city: string) {
-    this.weatherService.getWheatherData(city).subscribe((response:IWheather) => {
+    this.weatherService.getWheatherData(city).subscribe((response: IWheather) => {
 
       const weatherResponse = response
 
