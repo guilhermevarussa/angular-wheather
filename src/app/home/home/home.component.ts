@@ -14,6 +14,13 @@ export class HomeComponent {
 
   weatherData!: IWheather | any
 
+
+  temp!: IWheather | any;
+  maxTemp!: IWheather | any;
+  minTemp!: IWheather | any;
+  humidity!: IWheather | any;
+
+
   constructor(
     private weatherService: NewWheatherService,
     private observerService: ObserverService
@@ -24,14 +31,16 @@ export class HomeComponent {
   ngOnInit() {
     this.getCityName()
 
+    this.temp = this.weatherData.main.temp
+    this.maxTemp = this.weatherData.max_temp
+
+
   }
 
 
   getCityName() {
     this.observerService.getData().subscribe(async (cityData) => {
-
       const newCity = String(cityData)
-
       this.getWeather(newCity)
 
     })
@@ -44,11 +53,22 @@ export class HomeComponent {
 
       console.log(weatherResponse)
 
-      return this.weatherData = weatherResponse
+      this.weatherData = weatherResponse
 
+
+      this.ajustData(this.weatherData)
 
     })
+  };
 
+
+  ajustData(weather: IWheather) {
+
+    this.temp = weather.main.temp;
+    this.maxTemp = weather.main.temp_max;
+    this.minTemp = weather.main.temp_min;
+    this.humidity = weather.main.humidity;
 
   }
+
 }

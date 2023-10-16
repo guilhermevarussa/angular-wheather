@@ -10,7 +10,7 @@ export interface IWheather {
 
     main: {
         feels_like: number;
-        humity: number;
+        humidity: number;
         pressure: number;
         temp: number;
         temp_max: number;
