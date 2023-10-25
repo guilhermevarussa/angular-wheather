@@ -13,6 +13,7 @@ export class HomeComponent {
 
 
   weatherData!: IWheather | any
+  img: any
 
 
   temp!: IWheather | any;
@@ -33,8 +34,6 @@ export class HomeComponent {
 
     this.temp = this.weatherData.main.temp
     this.maxTemp = this.weatherData.max_temp
-
-
   }
 
 
@@ -48,22 +47,24 @@ export class HomeComponent {
 
   getWeather(city: string) {
     this.weatherService.getWheatherData(city).subscribe((response: IWheather) => {
-
       const weatherResponse = response
-
       console.log(weatherResponse)
-
       this.weatherData = weatherResponse
-
-
       this.ajustData(this.weatherData)
+      // this.getIamageData(this.weatherData)
 
     })
   };
 
 
-  ajustData(weather: IWheather) {
 
+  getIamageData(temp: IWheather) {
+    this.weatherService.getImage(temp).subscribe((response: IWheather) => {
+       this.img = response
+    })
+  }
+
+  ajustData(weather: IWheather) {
     this.temp = weather.main.temp;
     this.maxTemp = weather.main.temp_max;
     this.minTemp = weather.main.temp_min;

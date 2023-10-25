@@ -26,6 +26,6 @@ export interface IWheather {
         }
     ];
 
-    name: string
+    name: string;
 
 }

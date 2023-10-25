@@ -8,10 +8,8 @@ import { IWheather } from 'src/app/models/wheadther';
 })
 export class CardComponent {
 
-  @Input() temp!: IWheather
-  @Input() maxTemp!: IWheather
-  @Input() minTemp!: IWheather
-  @Input() humidity!: IWheather
+  @Input() content!: any
+  @Input() header!: any
 
   
 constructor(){

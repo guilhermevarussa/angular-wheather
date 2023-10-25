@@ -12,6 +12,10 @@ export class NewWheatherService {
   apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
   wheatherData!: IWheather | any
 
+  image!: any;
+
+  imageUrl = `http://openweathermap.org/img/wn`
+
 
 
   constructor(private http: HttpClient) { }
@@ -23,6 +27,13 @@ export class NewWheatherService {
     const apikey = this.key
 
     return this.wheatherData = this.http.get<IWheather>(`${this.apiUrl}?q=${city}&appid=${apikey}`)
+
+  }
+
+
+  getImage(data: IWheather): Observable<any> {
+
+    return this.image = this.http.get(`${this.imageUrl}/${data.weather[0].icon}.png`)
 
   }
 

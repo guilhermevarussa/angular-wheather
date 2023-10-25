@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { CardComponent } from './components/card/card.component';
+import { TemperatureComponent } from './pages/temperature/temperature.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CardComponent } from './components/card/card.component';
     HomeComponent,
     SearchComponent,
     ToolbarComponent,
-    CardComponent
+    CardComponent,
+    TemperatureComponent
   ],
   imports: [
     BrowserModule,
