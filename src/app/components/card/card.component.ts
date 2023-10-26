@@ -11,10 +11,14 @@ export class CardComponent {
   @Input() content!: any
   @Input() header!: any
 
-  
-constructor(){
+  icon_name: string = '';
 
-}
+
+  constructor() {
+
+  }
+
+ 
 
 
 }

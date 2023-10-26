@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IWheather } from 'src/app/models/wheadther';
 
 @Component({
@@ -6,29 +6,43 @@ import { IWheather } from 'src/app/models/wheadther';
   templateUrl: './temperature.component.html',
   styleUrls: ['./temperature.component.scss']
 })
-export class TemperatureComponent {
+export class TemperatureComponent implements OnInit {
   @Input() content!: any
   @Input() header!: any
   @Input() weather!: IWheather
-
-  temp:Number = 0
-
-constructor(){
-  // console.log(this.weather.weather.description)
-
-}
+  @Input() icon_name!: string
 
 
-trateDate(){
-  const data = Number(this.weather.main.temp)
-  console.log(data)
-  return this.temp = data
-}
+
+  temp: Number = 0
 
 
-getIcons(){
-  
-}
+  constructor() {
+    // console.log(this.weather.weather.description)
+
+  }
+
+
+  ngOnInit() {
+
+    this.getIcons()
+
+  }
+
+
+  trateDate() {
+    const data = Number(this.weather.main.temp)
+    console.log(data)
+    return this.temp = data
+
+
+  }
+
+
+  getIcons() {
+
+
+  }
 
 
 }

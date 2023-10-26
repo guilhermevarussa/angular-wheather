@@ -15,11 +15,7 @@ export class HomeComponent {
   weatherData!: IWheather | any
   img: any
 
-
-  temp!: IWheather | any;
-  maxTemp!: IWheather | any;
-  minTemp!: IWheather | any;
-  humidity!: IWheather | any;
+  icon_name: string = ''
 
 
   constructor(
@@ -31,9 +27,6 @@ export class HomeComponent {
 
   ngOnInit() {
     this.getCityName()
-
-    this.temp = this.weatherData.main.temp
-    this.maxTemp = this.weatherData.max_temp
   }
 
 
@@ -50,26 +43,27 @@ export class HomeComponent {
       const weatherResponse = response
       console.log(weatherResponse)
       this.weatherData = weatherResponse
-      this.ajustData(this.weatherData)
-      // this.getIamageData(this.weatherData)
-
+      this.getWeatherIcon(this.weatherData.main.temp)
     })
   };
 
 
-
   getIamageData(temp: IWheather) {
     this.weatherService.getImage(temp).subscribe((response: IWheather) => {
-       this.img = response
+      this.img = response
     })
   }
 
-  ajustData(weather: IWheather) {
-    this.temp = weather.main.temp;
-    this.maxTemp = weather.main.temp_max;
-    this.minTemp = weather.main.temp_min;
-    this.humidity = weather.main.humidity;
 
+  getWeatherIcon(temp: number) {
+
+    console.log('passou aqui')
+    if (temp > 10) {
+      this.icon_name = '2682814_cloud_moon_night_precipitation_snow_icon.svg';
+    }
+    return this.icon_name
   }
+
+
 
 }
