@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IWheather } from 'src/app/models/wheadther';
 
 @Component({
@@ -7,40 +8,38 @@ import { IWheather } from 'src/app/models/wheadther';
   styleUrls: ['./temperature.component.scss']
 })
 export class TemperatureComponent implements OnInit {
-  @Input() content!: any
-  @Input() header!: any
   @Input() weather!: IWheather
   @Input() icon_name!: string
+  @Input() see: boolean = false
 
 
 
   temp: Number = 0
+  visibility: boolean = false
 
 
-  constructor() {
-    // console.log(this.weather.weather.description)
+  constructor(private router: Router) { }
 
-  }
-
-
-  ngOnInit() {
-
-    this.getIcons()
-
-  }
+  ngOnInit() { }
 
 
   trateDate() {
     const data = Number(this.weather.main.temp)
     console.log(data)
     return this.temp = data
-
-
   }
 
 
-  getIcons() {
+  setCompleteWeather(weather: string) {
 
+    console.log('sapecou')
+    this.router.navigate([`/complete/${weather}`]);
+
+    if (this.visibility === false) {
+      this.visibility = true
+    } else {
+      this.visibility = false
+    }
 
   }
 

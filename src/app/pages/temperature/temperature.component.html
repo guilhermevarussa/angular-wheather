@@ -1,16 +1,22 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>{{ weather.name }}</mat-card-title>
-    <mat-card-subtitle>{{ weather.weather[0].description }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    {{ weather.main.temp }}
+<div class="temperature-container" *ngIf="see">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{ weather.name }}</mat-card-title>
+      <mat-card-subtitle>{{
+        weather.weather[0].description
+      }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ weather.main.temp }}
 
-    <img
-      [src]="'../../../assets/icons/'+icon_name"
-    />
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button (click)="getIcons()">Complete weather</button>
-  </mat-card-actions>
-</mat-card>
+      <div class="icon-container">
+        <img [src]="'../../../assets/icons/' + icon_name" />
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="action-button" >
+      <button mat-button (click)="setCompleteWeather(weather.name)">Complete weather</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<app-complete-temperature [visibility]="visibility"></app-complete-temperature>

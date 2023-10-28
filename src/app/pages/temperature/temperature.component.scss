@@ -1,0 +1,32 @@
+.temperature-container{
+    max-height: 50%;
+}
+
+.card{
+    max-width: 40%;
+    height: 100%;
+    display: flex;
+    margin: 15px;
+}
+
+.icon-container{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 15px;
+}
+
+.icon-container img{
+    max-height: 70px;
+    max-width: 70px;
+}
+
+.action-button{
+    flex-direction: row-reverse;
+    margin: 1%;
+}
+
+
+.action-button button{
+    background-color: orangered;
+    color:white;
+}

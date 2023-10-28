@@ -17,6 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { CardComponent } from './components/card/card.component';
 import { TemperatureComponent } from './pages/temperature/temperature.component';
+import { RouterModule} from '@angular/router';
+import { CompleteTemperatureComponent } from './pages/complete-temperature/complete-temperature.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { TemperatureComponent } from './pages/temperature/temperature.component'
     SearchComponent,
     ToolbarComponent,
     CardComponent,
-    TemperatureComponent
+    TemperatureComponent,
+    CompleteTemperatureComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,9 @@ import { TemperatureComponent } from './pages/temperature/temperature.component'
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    RouterModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
