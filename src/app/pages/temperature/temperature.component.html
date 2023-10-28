@@ -13,10 +13,22 @@
         <img [src]="'../../../assets/icons/' + icon_name" />
       </div>
     </mat-card-content>
-    <mat-card-actions class="action-button" >
-      <button mat-button (click)="setCompleteWeather(weather.name)">Complete weather</button>
+    <mat-card-actions class="action-button">
+      
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title> Complete weather </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngIf="panelOpenState">
+          <app-complete-temperature
+            [visibility]="visibility"
+            [wheather]="weather"
+          ></app-complete-temperature>
+        </div>
+      </mat-expansion-panel>
     </mat-card-actions>
   </mat-card>
 </div>
-
-<app-complete-temperature [visibility]="visibility"></app-complete-temperature>

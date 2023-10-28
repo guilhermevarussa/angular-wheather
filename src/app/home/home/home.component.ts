@@ -46,7 +46,6 @@ export class HomeComponent {
 
       if (this.see === false) {
         this.see = true
-        console.log('ta aqui')
       } else {
         this.see = false
       }

@@ -19,6 +19,7 @@ import { CardComponent } from './components/card/card.component';
 import { TemperatureComponent } from './pages/temperature/temperature.component';
 import { RouterModule} from '@angular/router';
 import { CompleteTemperatureComponent } from './pages/complete-temperature/complete-temperature.component'
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { CompleteTemperatureComponent } from './pages/complete-temperature/compl
     MatFormFieldModule,
     MatButtonModule,
     MatTableModule,
-    RouterModule
+    RouterModule,
+    MatExpansionModule
     
   ],
   providers: [],

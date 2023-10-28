@@ -3,10 +3,10 @@
 }
 
 .card{
-    max-width: 40%;
+    max-width: 95%;
     height: 100%;
     display: flex;
-    margin: 15px;
+    margin: auto
 }
 
 .icon-container{
@@ -21,12 +21,6 @@
 }
 
 .action-button{
-    flex-direction: row-reverse;
     margin: 1%;
-}
-
-
-.action-button button{
-    background-color: orangered;
-    color:white;
+    display: block;
 }

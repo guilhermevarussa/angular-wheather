@@ -16,6 +16,7 @@ export class TemperatureComponent implements OnInit {
 
   temp: Number = 0
   visibility: boolean = false
+  panelOpenState = false;
 
 
   constructor(private router: Router) { }
@@ -28,7 +29,6 @@ export class TemperatureComponent implements OnInit {
     console.log(data)
     return this.temp = data
   }
-
 
   setCompleteWeather(weather: string) {
 
