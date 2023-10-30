@@ -1,0 +1,12 @@
+.cards-container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.cards-container mat-card{
+    width: 90px;
+    height: 90px;
+    font-size: x-large;
+    margin: auto;
+}

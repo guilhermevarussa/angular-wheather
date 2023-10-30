@@ -11,11 +11,12 @@ export class CompleteTemperatureComponent implements OnInit {
   @Input() visibility: boolean = false
   @Input() wheather!: IWheather
 
-
   constructor() { }
   ngOnInit(): void {
 
     console.log('cidade', this.wheather)
+
+
 
   }
 

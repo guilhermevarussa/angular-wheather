@@ -15,7 +15,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
-import { CardComponent } from './components/card/card.component';
 import { TemperatureComponent } from './pages/temperature/temperature.component';
 import { RouterModule} from '@angular/router';
 import { CompleteTemperatureComponent } from './pages/complete-temperature/complete-temperature.component'
@@ -27,7 +26,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
     HomeComponent,
     SearchComponent,
     ToolbarComponent,
-    CardComponent,
     TemperatureComponent,
     CompleteTemperatureComponent
   ],

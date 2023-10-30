@@ -3,10 +3,17 @@
 }
 
 .card{
-    max-width: 95%;
+    max-width: 55%;
     height: 100%;
     display: flex;
-    margin: auto
+    margin: auto;
+}
+
+
+.card .temperature{
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
 }
 
 .icon-container{
@@ -23,4 +30,9 @@
 .action-button{
     margin: 1%;
     display: block;
+}
+
+.card mat-card-title{
+    font-size: x-large;
+    padding: 5px;
 }

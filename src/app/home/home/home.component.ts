@@ -60,7 +60,7 @@ export class HomeComponent {
 
     switch (weatherData) {
       case
-        weatherData.weather[0].description === 'light rain' && weatherData.weather[0].main === 'Rain':
+        weatherData.weather[0].description === 'scattered clouds' && weatherData.weather[0].main === 'Rain':
 
         return this.icon_name = 'rain.svg';
 
@@ -82,11 +82,11 @@ export class HomeComponent {
       case
         weatherData.weather[0].description === 'clear sky' && weatherData.weather[0].main === 'Clear':
 
-        return this.icon_name = 'clear-sky'
+        return this.icon_name = 'clearsky.svg'
 
       default:
 
-        return this.icon_name = 'clear-sky'
+        return this.icon_name = 'rain.svg'
         break;
     }
 

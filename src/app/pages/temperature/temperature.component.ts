@@ -14,34 +14,22 @@ export class TemperatureComponent implements OnInit {
 
 
 
-  temp: Number = 0
+  temp: number = 0
   visibility: boolean = false
   panelOpenState = false;
 
 
   constructor(private router: Router) { }
 
-  ngOnInit() { }
-
-
-  trateDate() {
-    const data = Number(this.weather.main.temp)
-    console.log(data)
-    return this.temp = data
+  ngOnInit() {
+    this.trateDate(this.weather.main.temp)
   }
 
-  setCompleteWeather(weather: string) {
 
-    console.log('sapecou')
-    this.router.navigate([`/complete/${weather}`]);
+  trateDate(weather: number) {
 
-    if (this.visibility === false) {
-      this.visibility = true
-    } else {
-      this.visibility = false
-    }
+    this.weather.main.temp = Number(weather.toFixed(2))
 
   }
-
 
 }

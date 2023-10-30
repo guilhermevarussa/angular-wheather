@@ -1,16 +1,13 @@
+<div class="cards-container">
+  <mat-card>
+    {{ wheather.clouds.all }}
+  </mat-card>
 
-<table class="table-container">
-  <thead>
-    <th>teste</th>
-    <th>teste</th>
-    <th>teste</th>
-    <th>teste</th>
-  </thead>
-  <tbody>
-    <td>{{wheather.name}}</td>
-    <td>{{wheather.clouds.all}}</td>
-    <td>{{wheather.main.feels_like}}</td>
-    <td>{{wheather.main.humidity}}</td>
-  </tbody>
+  <mat-card>
+    {{ wheather.main.feels_like }}
+  </mat-card>
 
-</table>
+  <mat-card>
+    {{ wheather.main.humidity }}
+  </mat-card>
+</div>
