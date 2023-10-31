@@ -1,13 +1,35 @@
 <div class="cards-container">
   <mat-card>
+    <mat-card-header>Clouds</mat-card-header>
     {{ wheather.clouds.all }}
+
+    <img src="../../../assets/icons/3741359_cloud_overcast_weather_icon.svg" />
   </mat-card>
 
   <mat-card>
+    <mat-card-header>Fells Like</mat-card-header>
     {{ wheather.main.feels_like }}
+    <img src="../../../assets/icons/3741354_weather_wind_windy_icon.svg" />
+  </mat-card>
+  <mat-card>
+    <mat-card-header>Max</mat-card-header>
+    {{ wheather.main.temp_max }}
+    <img
+      src="../../../assets/icons/3741361_celcius_fahrenheit_thermometer_weather_icon.svg"
+    />
   </mat-card>
 
   <mat-card>
+    <mat-card-header>Min</mat-card-header>
+    {{ wheather.main.temp_min }}
+    <img
+      src="../../../assets/icons/3741363_celcius_fahrenheit_thermometer_weather_icon.svg"
+    />
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>Humidity</mat-card-header>
     {{ wheather.main.humidity }}
+    <img src="../../../assets/icons/3741348_heavy rain_rain_weather_icon.svg">
   </mat-card>
 </div>

@@ -5,8 +5,16 @@
 
 
 .cards-container mat-card{
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     font-size: x-large;
     margin: auto;
+}
+
+mat-card{
+    align-items: center;
+}
+
+mat-card-header{
+    font-size: medium;
 }
